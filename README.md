@@ -1,2 +1,2 @@
 # Data_Analytics
-Python and R and SQL projects for data analytics
+Python, R and SQL projects for data analytics
