@@ -1,1 +1,29 @@
-SQL
+CREATE TABLE public.churn_additional
+(
+    customer_id text COLLATE pg_catalog."default",
+    gender text COLLATE pg_catalog."default",
+    tenure numeric,
+    contract text COLLATE pg_catalog."default",
+    payment_method text COLLATE pg_catalog."default",
+    monthly_charge numeric,
+    churn text COLLATE pg_catalog."default"
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public.churn_additional
+    OWNER to postgres;
+
+
+
+--command " "\\copy public.churn_additional (customer_id, gender, tenure, contract, payment_method, monthly_charge, churn) FROM 'C:/Users/LabUser/Desktop/TELCO_~1.CSV' DELIMITER ',' CSV HEADER QUOTE '\"' ESCAPE '''';""
+select count(*) from churn_additional where customer_id is NULL
+OR gender is NULL
+OR tenure is NULL
+OR contract is NULL
+OR payment_method is NULL
+OR monthly_charge is NULL
+OR churn is NULL;
+
+select customer_id,count(customer_id) from churn_additional group by 
+customer_id having count(customer_id) > 1;
