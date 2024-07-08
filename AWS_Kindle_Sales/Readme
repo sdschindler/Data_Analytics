@@ -1,0 +1,1 @@
+This project uses boto3 to upload a csv file to an S3 storage bucket in AWS then transfers that data to a data lake and data wharehouse and finally to a jupiter notebook.
